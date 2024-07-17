@@ -25,19 +25,21 @@ document.querySelector( '.check' ).addEventListener( 'click',
             }
         }
         
-        // when player guess to high
-        else if ( guess > secretNum ) {
-            document.querySelector( '.message' ).textContent = "📈Too high!";
-            score--;
-            document.querySelector( '.score' ).textContent = score;
+        // when player guess wrong
+        else if ( guess !== secretNum ) {
+            if ( score > 1 ) {
+                document.querySelector( '.message' ).textContent =
+                    guess > secretNum ? "📈 Too high!" : "📉 Too Low!";
+                score--;
+                document.querySelector( '.score' ).textContent = score;
+            }
+            else {
+                document.querySelector( '.message' ).textContent =
+                    "💥 You los the game!";
+                document.querySelector( '.score' ).textContent = 0;
+            }
         }
         
-        // when player guess to low
-        else if ( guess < secretNum ) {
-            document.querySelector( '.message' ).textContent = "📉 Too low!";
-            score--;
-            document.querySelector( '.score' ).textContent = score;
-        }
     } );
 
 document.querySelector( '.again' ).addEventListener( 'click',
