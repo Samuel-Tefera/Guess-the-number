@@ -41,6 +41,7 @@ document.querySelector( '.again' ).addEventListener( 'click',
         score = 20;
         document.querySelector( '.score' ).textContent = score;
         document.querySelector( ".number" ).textContent = '?';
+        document.querySelector( '.message' ).textContent = "Start guessing...";
         document.querySelector( 'body' ).style.backgroundColor = '#222222';
         document.querySelector( '.guess' ).value = null;
     } );
